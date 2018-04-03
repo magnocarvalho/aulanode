@@ -14,7 +14,8 @@
     "express": "^4.15.2",
     "express-load": "^1.1.15",
     "express-validator": "^5.1.0",
-    "mysql": "^2.13.0"
+    "mysql": "^2.13.0",
+    "socket.io": "^2.1.0"
   },
   "devDependencies": {
     "mocha": "^5.0.5",
