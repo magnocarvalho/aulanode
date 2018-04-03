@@ -38,8 +38,14 @@ module.exports = function(app) {
 
         var errors = req.validationErrors();
         if(errors){
-            res.render('produtos/form', {errosValidacao : errors, produto:produto});
-            return;
+            res.format({
+                html: function(){
+                    res.status(400).render('produtos/form',{errosValidacao:erros,produto:produto});
+                },
+                json: function(){
+                    res.status(400).json(errors);
+                }
+            });
         }
 
         produtosDao.salva(produto,function(erros,resultado){
